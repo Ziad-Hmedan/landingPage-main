@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: 'Be Vietnam';
+  src: url('./assets/font/BeVietnam-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Be Vietnam';
+  src: url('./assets/font/BeVietnam-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.flex-center {
+  @apply flex justify-between items-center;
+}
+.h1-text {
+  @apply text-lg xl:text-xl leading-xl  xl:leading-xl1 tracking-sm   font-bold;
+}
+.h2-text {
+  @apply md:font-bold   md:text-lg text-md font-extrabold leading-lg tracking-md;
+}
+.h3-text {
+  @apply font-bold tracking-xl;
+}
+.p-text {
+  @apply leading-xs xl:leading-xss   opacity-50;
+}
+.btn {
+  @apply mx-auto text-xs  content-center xl:mx-0 rounded-full   w-[137px] h-11 mb-auto text-center transition ease-in-out duration-500  ;
+}
+.btn-white{
+  @apply bg-softPink text-BrightRed hover:text-opacity-50
+}
+.btn-orange{
+  @apply text-softPink bg-BrightRed  hover:bg-BrightRedLight btn-shadow shadow-BrightRed
+}
+.bg-linear {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+.btn-shadow {
+  box-shadow: 0px 5px 5px #f98f75;
+}
+.centerPosition {
+  top: 50%;
+  left: -50%;
+}
+.translate50 {
+  transform: translateX(-100%);
+}
+.c {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} 
+.grid-2 {
+  grid-template-columns: auto 1fr;
+}
+.grid-2-auto{
+  grid-template-columns: auto auto;
+  
+}
+.col-span-all {
+  grid-column: 1/-1;
+}
+
+.font-vitenam{
+  font-family: 'Be Vietnam';
+  font-weight: normal;
+  font-style: normal;
+}
+.bg-img{
+  background-image: url("./assets/images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-position: right-top;
+}
