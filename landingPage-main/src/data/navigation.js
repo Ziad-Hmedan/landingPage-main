@@ -1,7 +1,6 @@
 export const navigationLinks = [
-  "Pricing",
-  "Product",
-  "About Us",
-  "Careers",
-  "Community",
+  { id: "overview", label: "Overview" },
+  { id: "features", label: "Features" },
+  { id: "testimonials", label: "Testimonials" },
+  { id: "updates", label: "Updates" },
 ];

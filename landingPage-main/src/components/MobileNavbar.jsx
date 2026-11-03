@@ -1,25 +1,21 @@
 import PropTypes from "prop-types";
-import { navigationLinks } from "../data/navigation";
+import NavigationLinks from "./NavigationLinks";
 
-export default function MobileNavbar({ isOpen, onNavigate }) {
+export default function MobileNavbar({ activeSection, onNavigate }) {
   return (
     <nav
       id="mobile-navigation"
       aria-label="Primary"
-      className={`absolute left-[50%] translate-y-[50%] container z-50 transition ease-in-out duration-300 xl:hidden ${isOpen ? "translate-x-[-50%]" : "translate-x-[100%]"}`}
+      className="absolute top-full left-0 right-0 mt-3 mx-4 rounded-lg bg-white shadow-xl xl:hidden"
     >
-      <ul className="text-center space-y-6 bg-white py-10 font-bold">
-        {navigationLinks.map(label => (
-          <li key={label} className="hover:opacity-50 transition ease-in-out duration-300">
-            <a href="#" onClick={onNavigate}>{label}</a>
-          </li>
-        ))}
+      <ul className="text-center py-5 px-4 font-bold">
+        <NavigationLinks activeSection={activeSection} onNavigate={onNavigate} />
       </ul>
     </nav>
   );
 }
 
 MobileNavbar.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  onNavigate: PropTypes.func,
+  activeSection: PropTypes.string.isRequired,
+  onNavigate: PropTypes.func.isRequired,
 };

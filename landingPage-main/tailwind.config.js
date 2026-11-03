@@ -18,15 +18,15 @@ export default {
       xl: "3.5rem", //56
     },
     lineHeight: {
-      xss: "26px", 
-      xs: "28px", 
+      xss: "26px",
+      xs: "28px",
 
-      base: "auto", 
+      base: "1.5",
 
-      lg: "44px", 
-      lg1: "45px", 
+      lg: "44px",
+      lg1: "45px",
 
-      xl: "50px", 
+      xl: "50px",
       xl1: "64px",
     },
     letterSpacing:{
@@ -35,18 +35,19 @@ export default {
         xl:"-.1px",
     },
     fontFamily:{
-      vietnam: ["Be Vietnam Pro", "sans-serif"],
+      vietnam: ["Be Vietnam", "sans-serif"],
     },
     screens:{
       xss:"300px",
       xs:"327px",
-      sm:" 540px",
-      md:" 790px",
-      lg:" 960px",
-      xl:" 1110px",
+      sm:"540px",
+      md:"790px",
+      lg:"960px",
+      xl:"1110px",
     },
     container:{
       center:true,
+      padding: "1rem",
     },
     extend: {
       colors: {
@@ -59,7 +60,7 @@ export default {
 
         black: "#000000",
         gray: {
-          
+
           light: "#e5e9ea",
           med: "#8d8d8d",
           dark: "#343a40",

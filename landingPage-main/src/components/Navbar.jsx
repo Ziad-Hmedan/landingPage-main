@@ -1,15 +1,16 @@
-import { navigationLinks } from "../data/navigation";
+import PropTypes from "prop-types";
+import NavigationLinks from "./NavigationLinks";
 
-export default function Navbar() {
+export default function Navbar({ activeSection }) {
   return (
     <nav aria-label="Primary" className="max-xl:hidden">
-      <ul className="flex tracking-xl font-bold mx-auto gap-8 font-base">
-        {navigationLinks.map(label => (
-          <li key={label} className="hover:opacity-50 transition ease-in-out duration-300">
-            <a href="#">{label}</a>
-          </li>
-        ))}
+      <ul className="flex items-center gap-7 text-smm font-bold">
+        <NavigationLinks activeSection={activeSection} />
       </ul>
     </nav>
   );
 }
+
+Navbar.propTypes = {
+  activeSection: PropTypes.string.isRequired,
+};

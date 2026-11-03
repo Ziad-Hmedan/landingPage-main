@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 
-function Button({ style = "" }) {
-  return <a href="#" className={style}>Get Started</a>;
+export default function Button({ children = "Explore features", href = "#features", variant = "orange", className = "" }) {
+  return <a href={href} className={`btn btn-${variant} ${className}`}>{children}</a>;
 }
 
 Button.propTypes = {
-  style: PropTypes.string,
+  children: PropTypes.node,
+  href: PropTypes.string,
+  variant: PropTypes.oneOf(["orange", "white"]),
+  className: PropTypes.string,
 };
-
-export default Button;

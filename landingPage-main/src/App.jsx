@@ -1,23 +1,26 @@
-import { useCallback, useState } from "react";
 import { Header } from "./components";
+import BackToTop from "./components/BackToTop";
 import { GetStarted, Features, Hero, Testimonials, ContactUs } from "./pages";
 import { features, testimonials } from "./data";
+import useActiveSection from "./hooks/useActiveSection";
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
-  const handleOpen = useCallback(() => setIsOpen(show => !show), []);
-  const handleClose = useCallback(() => setIsOpen(false), []);
+  const activeSection = useActiveSection();
 
   return (
-    <div className="relative">
-      <Header isOpen={isOpen} handleOpen={handleOpen} onClose={handleClose} />
-      <Hero />
-      <main>
-        <Features features={features} />
-        <Testimonials testimonials={testimonials} />
-        <GetStarted />
-      </main>
-      <ContactUs />
+    <div id="top" tabIndex={-1} className="relative">
+      <a href="#main-content" className="skip-link" data-menu-inert>Skip to main content</a>
+      <Header activeSection={activeSection} />
+      <div data-menu-inert>
+        <main id="main-content" tabIndex={-1}>
+          <Hero />
+          <Features features={features} />
+          <Testimonials testimonials={testimonials} />
+          <GetStarted />
+        </main>
+        <ContactUs />
+        <BackToTop />
+      </div>
     </div>
   );
 }
